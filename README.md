@@ -268,4 +268,4 @@ MIT License - see [LICENSE](LICENSE) file
 
 Created by Nnamdi Michael Okpala for the OBINexus project.
 
-Based on the OBINexus Derivative Tracing System (ODTS) mathematical framework.
+Based on the OBINexus Derivative Tracing System (ODTS) mathematical framework.# obinexus-dynopryamid
