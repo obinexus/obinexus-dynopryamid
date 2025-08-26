@@ -1,0 +1,266 @@
+/* OBINexus 3D Pyramid Component Styles */
+/* File: src/components/OBINexusPyramid3D.css */
+
+.obinexus-pyramid-3d {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.pyramid-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pyramid-header h1 {
+  color: #333;
+  margin: 0 0 10px 0;
+  font-size: 2rem;
+}
+
+.pyramid-header p {
+  color: #666;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* UI Flow Indicator */
+.ui-flow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.flow-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.flow-step.active {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.flow-step span {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.flow-arrow {
+  margin: 0 20px;
+  font-size: 24px;
+  color: #999;
+}
+
+/* Pyramid Viewport */
+.pyramid-viewport {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.pyramid-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.pyramid-layer-3d {
+  transition: all 0.2s ease;
+}
+
+.pyramid-layer-3d:hover {
+  filter: brightness(1.1);
+}
+
+/* Metrics Panel */
+.metrics-panel {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  min-width: 250px;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.metrics-panel h3 {
+  margin: 0 0 15px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.metrics-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.metric {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  background: #f5f5f5;
+  border-radius: 4px;
+}
+
+.metric-label {
+  font-weight: 600;
+  color: #666;
+}
+
+.metric-value {
+  color: #333;
+  font-weight: bold;
+}
+
+/* FUD Mitigation Indicator */
+.fud-mitigation {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #4CAF50;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ccc;
+  display: inline-block;
+}
+
+.status-indicator.active {
+  background: #4CAF50;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Legend */
+.pyramid-legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.color-box {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .ui-flow-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .flow-arrow {
+    transform: rotate(90deg);
+    margin: 10px 0;
+  }
+  
+  .metrics-panel {
+    position: static;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .pyramid-legend {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .obinexus-pyramid-3d {
+    background: #1a1a1a;
+    color: #e0e0e0;
+  }
+  
+  .pyramid-header h1 {
+    color: #e0e0e0;
+  }
+  
+  .pyramid-header p {
+    color: #999;
+  }
+  
+  .pyramid-viewport {
+    background: #2a2a2a;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
+  
+  .metrics-panel {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #e0e0e0;
+  }
+  
+  .metric {
+    background: #333;
+  }
+  
+  .ui-flow-container,
+  .pyramid-legend {
+    background: #2a2a2a;
+  }
+}
